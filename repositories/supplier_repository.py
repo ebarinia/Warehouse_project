@@ -12,6 +12,12 @@ def save(supplier):
     supplier.id = results[0]['id']
     return supplier
 
+def update(supplier):
+    sql = "UPDATE suppliers SET (name, location, active) = (%s, %s, %s) WHERE id = %s"
+    values = [supplier.name, supplier.location, supplier.active]
+    print(values)
+    run_sql(sql, values)
+
 def select_all():
     suppliers = []
     sql = "SELECT * FROM suppliers"
@@ -35,3 +41,9 @@ def select(id):
 def delete_all():
     sql = "DELETE  FROM suppliers"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE  FROM suppliers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
