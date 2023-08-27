@@ -24,4 +24,3 @@ CREATE TABLE items (
 --   id SERIAL PRIMARY KEY,
 --   item_id NOT NULL REFERENCES items(id)
 -- );
-

@@ -1,1 +1,26 @@
-/* The design go here dude
+.topnav {
+    position: relative;
+    background-color: #6a6a6a;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Helvetica", arial, sans-serif;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #eec317;
+    color: white;
+  }
+  
