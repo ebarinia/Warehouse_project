@@ -5,8 +5,8 @@ from models.item import Item
 from models.supplier import Supplier
 
 def save(item):
-    sql = "INSERT INTO items (name, description, quantity, buying_cost, selling_price, sold_out) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.sold_out]
+    sql = "INSERT INTO items (name, description, quantity, buying_cost, selling_price, supplier_id, sold_out) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.supplier.id, item.sold_out]
 
     results = run_sql( sql, values )
     item.id = results[0]['id']
@@ -20,3 +20,7 @@ def select_all():
         item = Item(row['name'],row['description'], row['quantity'], row['buying_cost'], row['selling_price'], row['sold_out'], row['id'])
         items.append(item)
     return items
+
+def delete_all():
+    sql = "DELETE  FROM items"
+    run_sql(sql)

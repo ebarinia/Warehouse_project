@@ -11,3 +11,7 @@ def save(supplier):
     results = run_sql( sql, values )
     supplier.id = results[0]['id']
     return supplier
+
+def delete_all():
+    sql = "DELETE  FROM suppliers"
+    run_sql(sql)
