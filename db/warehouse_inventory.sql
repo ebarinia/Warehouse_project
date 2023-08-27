@@ -24,3 +24,4 @@ CREATE TABLE suppliers (
 --   id SERIAL PRIMARY KEY,
 --   item_id NOT NULL REFERENCES items(id)
 -- );
+
