@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS suppliers;
-DROP TABLE IF EXISTS inventory;
+-- DROP TABLE IF EXISTS inventory;
 
 CREATE TABLE items (
   id SERIAL PRIMARY KEY,
@@ -9,9 +9,8 @@ CREATE TABLE items (
   quantity INT,
   buying_cost FLOAT,
   selling_price FLOAT,
-  supplier_id NOT NULL REFERENCES suppliers(id),
-  sold BOOLEAN,
-  low_quantity BOOLEAN
+--   supplier_id NOT NULL REFERENCES suppliers(id),
+  sold_out BOOLEAN
 );
 
 CREATE TABLE suppliers (
@@ -21,7 +20,7 @@ CREATE TABLE suppliers (
   active BOOLEAN
 );
 
-CREATE TABLE inventory (
-  id SERIAL PRIMARY KEY,
-  item_id NOT NULL REFERENCES items(id)
-);
+-- CREATE TABLE inventory (
+--   id SERIAL PRIMARY KEY,
+--   item_id NOT NULL REFERENCES items(id)
+-- );
