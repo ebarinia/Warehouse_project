@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+{% for supplier in all_suppliers %}
+    <div class="supplier">
+        <div class="content">
+            <a href="/suppliers/{{supplier.id}}">{{supplier.name}}</a>
+            <p>Location: {{supplier.location}}</p>
+            <p>Active: {{supplier.active}}</p>
+            <hr>
+        </div>
+    </div>
+    
+{% endfor %}
+
+{% endblock %}

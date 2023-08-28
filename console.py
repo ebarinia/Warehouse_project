@@ -29,7 +29,4 @@ item_repository.save(item_3)
 item_4 = Item('iphone 11', 'iphone 11 pro max 256gb', 3, 100.00, 180.00, supplier_1, False)
 item_repository.save(item_4)
 
-item_from_supplier = item_repository.item_from_supplier(supplier_1)
-print(item_from_supplier)
-
 pdb.set_trace()

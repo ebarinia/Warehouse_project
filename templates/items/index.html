@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+{% for item in all_items %}
+    <div class="item">
+        <div class="content">
+            <a href="/items/{{item.id}}">{{item.name}}</a>
+            <p>Description: {{item.description}}</p>
+            <p>Quantity: {{item.quantity}}</p>
+            <hr>
+        </div>
+    </div>
+    
+{% endfor %}
+{% endblock %}

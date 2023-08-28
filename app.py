@@ -14,5 +14,9 @@ app.register_blueprint(suppliers_blueprint)
 def home():
     return render_template('index.html')
 
+@app.route('/new')
+def new_page():
+    return render_template('new.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
