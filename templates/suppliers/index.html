@@ -5,13 +5,18 @@
 {% for supplier in all_suppliers %}
     <div class="supplier">
         <div class="content">
-            <a href="/suppliers/{{supplier.id}}">{{supplier.name}}</a>
+            <h3>{{supplier.name}}</h3>
             <p>Location: {{supplier.location}}</p>
-            <p>Active: {{supplier.active}}</p>
-            <hr>
+            <p>Active: {% if supplier.active == True %} Yes {% elif supplier.active == False%} No {%endif%}</p>
         </div>
+
+        <div class="buttons">
+        <form class="show_button" action="/suppliers/{{supplier.id}}">
+            <button class="show_more">Show More</button>
+        </form>
+        </div>
+        <hr>
     </div>
-    
 {% endfor %}
 
 {% endblock %}

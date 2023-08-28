@@ -11,8 +11,7 @@ def save(supplier):
 
 def update(supplier):
     sql = "UPDATE suppliers SET (name, location, active) = (%s, %s, %s) WHERE id = %s"
-    values = [supplier.name, supplier.location, supplier.active]
-    print(values)
+    values = [supplier.name, supplier.location, supplier.active, supplier.id]
     run_sql(sql, values)
 
 def select_all():

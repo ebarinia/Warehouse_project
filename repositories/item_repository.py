@@ -14,8 +14,7 @@ def save(item):
 
 def update(item):
     sql = "UPDATE items SET (name, description, quantity, buying_cost, selling_price, supplier_id, sold_out) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.supplier.id, item.sold_out]
-    print(values)
+    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.supplier.id, item.sold_out, item.id]
     run_sql(sql, values)
 
 def select_all():
@@ -23,7 +22,8 @@ def select_all():
     sql = "SELECT * FROM items"
     results = run_sql(sql)
     for row in results:
-        item = Item(row['name'],row['description'], row['quantity'], row['buying_cost'], row['selling_price'], row['sold_out'], row['id'])
+        supplier = supplier_repository.select(row['supplier_id'])
+        item = Item(row['name'],row['description'], row['quantity'], row['buying_cost'], row['selling_price'], supplier , row['sold_out'], row['id'])
         items.append(item)
     return items
 

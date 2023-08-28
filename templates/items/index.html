@@ -5,12 +5,19 @@
 {% for item in all_items %}
     <div class="item">
         <div class="content">
-            <a href="/items/{{item.id}}">{{item.name}}</a>
+            <h3>{{item.name}}</h3>
             <p>Description: {{item.description}}</p>
             <p>Quantity: {{item.quantity}}</p>
-            <hr>
+            <p>Supplier: {{item.supplier.name}}</p>
         </div>
+
+        <div class="buttons">
+        <form class="show_button" action="/items/{{item.id}}">
+            <button class="show_more">Show More</button>
+        </form>
+        </div>
+        <hr>
     </div>
-    
 {% endfor %}
+
 {% endblock %}
