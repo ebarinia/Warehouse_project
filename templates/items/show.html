@@ -7,7 +7,7 @@
     <p>Quantity: {{item.quantity}}</p>
     <p>Buying Cost: {{item.buying_cost}}</p>
     <p>Selling Price: {{item.selling_price}}</p>
-    <p>Supplier: {{item.supplier_id}}</p>
+    <p>Supplier: {{item.supplier.name}}</p>
     <p><a href="/items/{{item.id}}/edit">Edit</a></p>
   </div>
 {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<form action="/items/{{item.id}}" method="post">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" value="{{item.name}}" required autofocus>
+    </div>
+  
+    <div>
+        <label for="description">Description: </label>
+        <input type="text" id="description" name="description" value="{{item.description}}" required>
+    </div>
+  
+    <div>
+        <label for="quantity">Quantity: </label>
+        <input type="number" id="quantity" name="quantity" value="{{item.quantity}}" required>
+    </div>
+
+    <div>
+        <label for="buying_cost">Buying Cost: </label>
+        <input type="number" id="buying_cost" name="buying_cost" value="{{item.buying_cost}}" required>
+    </div>
+
+    <div>
+        <label for="selling_price">Selling Price: </label>
+        <input type="number" id="selling_price" name="selling_price" value="{{item.selling_price}}" required>
+    </div>
+
+    <div>
+         <label for="supplier">Supplier: </label>
+         <select name="supplier" id="">
+            {% for supplier in suppliers %}
+            <option value={{supplier.id}}>{{supplier.name}}</option>
+            {% endfor %}
+         </select>
+    </div>
+  
+    <button type="submit">Update Item</button>
+  
+  </form>
+{% endblock %}

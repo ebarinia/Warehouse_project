@@ -1,6 +1,6 @@
 from db.run_sql import run_sql
 from models.item import Item
-
+import pdb
 
 import repositories.supplier_repository as supplier_repository
 
@@ -13,9 +13,11 @@ def save(item):
     return item
 
 def update(item):
-    sql = "UPDATE items SET (name, description, quantity, buying_cost, selling_price, supplier_id, sold_out) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.supplier.id, item.sold_out, item.id]
-    run_sql(sql, values)
+    # pdb.set_trace()
+    sql = "UPDATE items SET (name, description, quantity, buying_cost, selling_price, supplier_id, sold_out) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s RETURNING *"
+    values = [item.name, item.description, item.quantity, item.buying_cost, item.selling_price, item.supplier.id, False, item.id]
+    result = run_sql(sql, values)
+    # pdb.set_trace()
 
 def select_all():
     items = []
