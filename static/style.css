@@ -24,3 +24,8 @@
     color: white;
   }
    */
+
+  body {
+    background: url('/static/images/background.jpg');
+  }
+  

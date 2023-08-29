@@ -15,5 +15,6 @@ CREATE TABLE items (
   quantity INT,
   buying_cost FLOAT,
   selling_price FLOAT,
-  supplier_id INT NOT NULL REFERENCES suppliers(id),
+  supplier_id INT NOT NULL REFERENCES suppliers(id)
 );
+

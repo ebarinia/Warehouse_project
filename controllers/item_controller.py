@@ -14,6 +14,26 @@ def list_items():
     items = item_repository.select_all()
     return render_template("items/index.html", all_items = items)
 
+@items_blueprint.route("/items/new_item")
+def new_item():
+    item = item_repository.select_all()
+    suppliers = supplier_repository.select_all()
+    return render_template('new/new_item.html', item = item, suppliers = suppliers)
+
+@items_blueprint.route("/items", methods=['POST'])
+def add_item():
+    # pdb.set_trace()
+    name          = request.form['name']
+    description   = request.form['description']
+    quantity      = int(request.form['quantity'])
+    buying_cost   = float(request.form['buying_cost'])
+    selling_price = float(request.form['selling_price'])
+    supplier_id   = request.form['supplier']
+    supplier      = supplier_repository.select(supplier_id)
+    item          = Item(name, description, quantity, buying_cost, selling_price, supplier)
+    item_repository.save(item)
+    return redirect('items')
+
 @items_blueprint.route("/items/<id>")
 def show_item(id):
     item = item_repository.select(id)
@@ -34,7 +54,7 @@ def update_item(id):
     buying_cost   = float(request.form['buying_cost'])
     selling_price = float(request.form['selling_price'])
     supplier_id   = request.form['supplier']
-    supplier = supplier_repository.select(supplier_id)
-    item          = Item(name, description, quantity, buying_cost, selling_price, supplier, False, id)
+    supplier      = supplier_repository.select(supplier_id)
+    item          = Item(name, description, quantity, buying_cost, selling_price, supplier, id)
     item_repository.update(item)
     return redirect('/items')

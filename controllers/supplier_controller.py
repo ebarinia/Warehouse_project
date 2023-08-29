@@ -8,10 +8,24 @@ import repositories.supplier_repository as supplier_repository
 
 suppliers_blueprint = Blueprint("suppliers", __name__)
 
-@suppliers_blueprint.route("/suppliers")
+@suppliers_blueprint.route("/suppliers/")
 def list_suppliers():
     suppliers = supplier_repository.select_all()
     return render_template("suppliers/index.html", all_suppliers = suppliers)
+
+@suppliers_blueprint.route("/suppliers/new_supplier")
+def new_supplier():
+    supplier = supplier_repository.select_all()
+    return render_template('new/new_supplier.html', supplier = supplier)
+
+@suppliers_blueprint.route("/suppliers", methods=['POST'])
+def add_supplier():
+    name         = request.form['name']
+    location     = request.form['location']
+    active       = request.form['active']
+    supplier     = Supplier(name, location, active)
+    supplier_repository.save(supplier)
+    return redirect('suppliers')
 
 @suppliers_blueprint.route("/suppliers/<id>")
 def show_supplier(id):
