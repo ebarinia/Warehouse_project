@@ -2,13 +2,12 @@
 
 {% block content %}
 <div class="item-list">
-    <h3>{{supplier.name}}</h3>
+    <h3 class="item-name">{{supplier.name}}</h3>
     <p>Location: {{supplier.location}}</p>
     <p>Active: {% if supplier.active == True %} Yes {%elif supplier.active == False%} No {%endif%}</p>
     <form class="edit-form" action="/suppliers/{{supplier.id}}/edit">
       <button class="edit-button">Edit Supplier</button>
     </form>
-    <br>
     <form class="delete-form" action="/suppliers/{{supplier.id}}/delete" method="POST">
       <button class="delete-button">Delete</button>
   </div>

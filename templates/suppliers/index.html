@@ -5,7 +5,7 @@
 {% for supplier in all_suppliers %}
     <div class="item-list">
         <div class="content">
-            <h3>{{supplier.name}}</h3>
+            <h3 class="item-name">{{supplier.name}}</h3>
             <p>Location: {{supplier.location}}</p>
             <p>Active: {% if supplier.active == True %} Yes {% elif supplier.active == False%} No {%endif%}</p>
         </div>
