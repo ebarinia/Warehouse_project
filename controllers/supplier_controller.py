@@ -11,7 +11,8 @@ suppliers_blueprint = Blueprint("suppliers", __name__)
 @suppliers_blueprint.route("/suppliers/")
 def list_suppliers():
     suppliers = supplier_repository.select_all()
-    return render_template("suppliers/index.html", all_suppliers = suppliers)
+    sorted_suppliers = sorted(suppliers, key=lambda suppliers: suppliers.name)
+    return render_template("suppliers/index.html", all_suppliers = sorted_suppliers)
 
 @suppliers_blueprint.route("/suppliers/new_supplier")
 def new_supplier():
@@ -50,3 +51,6 @@ def update_supplier(id):
 def delete(id):
     supplier_repository.delete(id)
     return redirect('/suppliers')
+
+# @suppliers_blueprint.route("/suppliers/<id>")
+# def item_by_supplier(id):

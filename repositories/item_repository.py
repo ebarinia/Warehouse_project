@@ -48,7 +48,7 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def item_from_supplier(supplier):
+def get_items_by_supplier(supplier):
     items = []
     sql = "SELECT * FROM items WHERE supplier_id = %s"
     values = [supplier.id]

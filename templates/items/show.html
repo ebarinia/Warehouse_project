@@ -3,11 +3,13 @@
 {% block content %}
 <div class="item-list">
     <h3 class="item-name">{{item.name}}</h3>
-    <p>Description: {{item.description}}</p>
-    <p>Quantity: {{item.quantity}}</p>
-    <p>Buying Cost: {{item.buying_cost}}</p>
-    <p>Selling Price: {{item.selling_price}}</p>
-    <p>Supplier: {{item.supplier.name}}</p>
+    <p><b>Description: </b> {{item.description}}</p>
+    <p><b>Quantity: </b> {% if item.quantity == 0 %}<span class="out-of-stock">Out of Stock</span>{%elif item.quantity < 5 %}{{ item.quantity }}<span class="low-stock">(Stock Low)</span>{% else %}{{ item.quantity }} {% endif %}</p>
+    <p><b>Buying Cost: </b> {{item.buying_cost}}</p>
+    <p><b>Selling Price: </b> {{item.selling_price}}</p>
+    <p><b>Supplier: </b> {{item.supplier.name}}</p>
+    <br>
+    
     <form class="edit-form" action="/items/{{item.id}}/edit">
       <button class="edit-button">Edit item</button>
     </form>

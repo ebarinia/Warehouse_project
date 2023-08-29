@@ -10,8 +10,8 @@
 
 body {
   height: 100vh;
-  background-color: #000;
-  background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80);
+  background-color: #508086;
+  /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/47/Annapurna_Ranges_%28Unsplash%29.jpg); */
   background-size: cover;
   background-position: center;
 }
@@ -25,6 +25,7 @@ a {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 400;
+  
 }
 
 a:hover{
@@ -32,24 +33,20 @@ a:hover{
 }
 /* HEADER */
 
-header {
-  position: relative;
-  padding: 0 2rem;
-}
-
 .logo {
-  margin-left: -75px;
+  margin-left: -52px;
   float: left;
 }
 
 .navbar {
-  width: 100;
+  /* width: 100; */
+  position: relative;
+  background-color: #336471;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -70,35 +67,58 @@ header {
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: 10px;
+  text-align: left;
+  min-width: 200px;
+  margin-top: 1em;
+  flex: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adding a box shadow */
+}
+
+.new-list {
+  border: 2px solid;
+  padding: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-bottom: 10px;
   top: 50%;
   left: 50;
   text-align: left;
   min-width: 200px;
   margin-top: 1em;
 }
-
 input {
   color: #000;
   border: solid 1px #999;
   padding: 0.5em;
   margin: 0.5em;
+  width: 100%;
 }
 
 textarea {
   min-height: 8em;
   min-height: 100%;
   padding: 0.5em;
+  margin: 0.5em;
+  width: 100%;
+  color: black;
 }
 
-.new-page {
+select {
+  padding: 0.5em;
+  margin: 0.5em;
+  color: black;
+}
+
+.new-page { 
   border: 2px solid;
   padding: 1%;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 40%;
+  margin-right: 40%;
   margin-bottom: 10px;
+  margin-top: 200px;
   top: 50%;
   left: 50;
-  text-align: left;
+  text-align: center;
 }
 
 .welcome {
@@ -111,7 +131,7 @@ textarea {
 }
 
 button {
-    background-color:#0a0a23;
+    background-color:#508086;
     display:inline-block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
@@ -124,21 +144,34 @@ button {
     color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
-    margin-top: 10px;
+    margin-top: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adding a box shadow */
+
 }
 button:hover{
   color:#000000;
   background-color:#FFFFFF;
 }
 
-.new-page {
-  text-align: center;
-}
-
-#new {
-  text-align: center;
+.form {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .item-name {
   color: rgb(235, 132, 14);
+}
+
+#content {
+  margin-top: 70px;
+}
+
+.out-of-stock {
+  color: red;
+  margin-left: 1px; 
+}
+
+.low-stock {
+  color: rgb(255, 247, 3);
+  margin-left: 10px; 
 }
