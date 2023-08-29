@@ -45,3 +45,8 @@ def update_supplier(id):
     supplier     = Supplier(name, location, active, id)
     supplier_repository.update(supplier)
     return redirect('/suppliers')
+
+@suppliers_blueprint.route("/suppliers/<id>/delete", methods=['POST'])
+def delete(id):
+    supplier_repository.delete(id)
+    return redirect('/suppliers')

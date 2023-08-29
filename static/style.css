@@ -1,31 +1,121 @@
-.topnav {
-    position: relative;
-    background-color: #6a6a6a;
-    overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #fff
 }
 
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Helvetica", arial, sans-serif;
+body {
+  height: 100vh;
+  background-color: #000;
+  background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80);
+  background-size: cover;
+  background-position: center;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+li {
+  list-style: none;
+}
 
-  /* .topnav a.active {
-    background-color: #eec317;
-    color: white;
-  }
-   */
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 
-  body {
-    background: url('/static/images/background.jpg');
-  }
-  
+a:hover{
+  color: orange;
+}
+/* HEADER */
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.logo {
+  margin-left: -75px;
+  float: left;
+}
+
+.navbar {
+  width: 100;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+
+.navbar .links {
+  float: right;
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.links {
+  float: auto;
+}
+
+.item-list {
+  border: 2px solid;
+  padding: 1%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 10px;
+  top: 50%;
+  left: 50;
+  text-align: left;
+}
+
+.new-page {
+  border: 2px solid;
+  padding: 1%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 10px;
+  top: 50%;
+  left: 50;
+  text-align: left;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.home-h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+button {
+    background-color:#0a0a23;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+button:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
+.new-page {
+  text-align: center;
+}

@@ -58,3 +58,8 @@ def update_item(id):
     item          = Item(name, description, quantity, buying_cost, selling_price, supplier, id)
     item_repository.update(item)
     return redirect('/items')
+
+@items_blueprint.route("/items/<id>/delete", methods=['POST'])
+def delete(id):
+    item_repository.delete(id)
+    return redirect('/items')

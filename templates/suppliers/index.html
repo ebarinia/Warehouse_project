@@ -3,7 +3,7 @@
 {% block content %}
     
 {% for supplier in all_suppliers %}
-    <div class="supplier">
+    <div class="item-list">
         <div class="content">
             <h3>{{supplier.name}}</h3>
             <p>Location: {{supplier.location}}</p>
@@ -12,10 +12,9 @@
 
         <div class="buttons">
         <form class="show_button" action="/suppliers/{{supplier.id}}">
-            <button class="show_more">Show More</button>
+            <button class="show">Show More</button>
         </form>
         </div>
-        <hr>
     </div>
 {% endfor %}
 

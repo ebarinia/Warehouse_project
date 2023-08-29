@@ -3,7 +3,7 @@
 {% block content %}
     
 {% for item in all_items %}
-    <div class="item">
+    <div class="item-list">
         <div class="content">
             <h3>{{item.name}}</h3>
             <p>Description: {{item.description}}</p>
@@ -16,7 +16,6 @@
             <button class="show_more">Show More</button>
         </form>
         </div>
-        <hr>
     </div>
 {% endfor %}
 

@@ -7,15 +7,30 @@
 </head>
 
 <body>
-<main class="flex flex--row">
-  <div class="topnav">
-    <div class="topnav-centered">
-      <a href="/" class="active">Home</a>
-      <a href="/items">Inventory</a>
-      <a href="/suppliers">Our Suppliers</a>
-      <a href="/new">Add New</a>
+<main >
+  <!-- <nav>
+    <div class="topnav">
+      <div class="topnav-centered">
+        <a href="/" class="active">Home</a>
+        <a href="/items">Inventory</a>
+        <a href="/suppliers">Suppliers</a>
+        <a href="/new">Add New</a>
+      </div>
     </div>
-  </div>
+  </nav> -->
+
+  <header>
+    <div class="navbar">
+      <img class="logo"src="/static/images/logo.png">
+      <ul class="links">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/items">INVENTORY</a></li>
+        <li><a href="/suppliers">SUPPLIERS</a></li>
+        <li><a href="/new">ADD NEW</a></li>
+      </ul>
+    </div>
+  </header>
+
 
   <section id="content">
       {% block content %}
