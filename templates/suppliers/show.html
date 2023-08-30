@@ -4,7 +4,20 @@
 <div class="item-list">
     <h3 class="item-name">{{supplier.name}}</h3>
     <p><b>Location: </b>{{supplier.location}}</p>
-    <p>{% if supplier.active == True %}{% elif supplier.active == False%}<span class="out-of-stock">Deactivated</span>{%endif%}</p>
+    <p>{% if supplier.active == True %}{% elif supplier.active == False%}<span class="out-of-stock">This supplier is deactivated</span>{%endif%}</p>
+
+    <br>
+      <h3 class="item-name">in inventory:</h3>
+      {% if items %}
+          <ul>
+              {% for item in items %}
+                  <li><a class="linked-items" href="/items/{{item.id}}">{{item.name}}</a></li>
+              {% endfor %}
+          </ul>
+      {% else %}
+          <p>No item from that supplier in the inventory</p>
+      {% endif %}
+
     <form class="edit-form" action="/suppliers/{{supplier.id}}/edit">
       <button class="edit-button">Edit Supplier</button>
     </form>

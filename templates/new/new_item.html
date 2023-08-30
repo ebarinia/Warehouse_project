@@ -32,7 +32,9 @@
          <label for="supplier">Supplier: </label>
          <select name="supplier">
             {% for supplier in suppliers %}
-            <option value={{supplier.id}}>{{supplier.name}}</option>
+                {% if supplier.active == True %}
+                <option value={{supplier.id}}>{{supplier.name}}</option>
+                {% endif %}
             {% endfor %}
          </select>
     </div>

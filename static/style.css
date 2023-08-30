@@ -22,10 +22,6 @@ li {
 
 a {
   text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 400;
-  
 }
 
 a:hover{
@@ -59,6 +55,10 @@ a:hover{
 
 .links {
   float: auto;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .item-list {
@@ -112,8 +112,8 @@ select {
 .new-page { 
   border: 2px solid;
   padding: 1%;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
   margin-bottom: 10px;
   margin-top: 200px;
   top: 50%;
@@ -174,4 +174,8 @@ button:hover{
 .low-stock {
   color: rgb(255, 247, 3);
   margin-left: 10px; 
+}
+
+.linked-item {
+  font-size: small;
 }

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="new-page">
+<fieldset class="new-page" id="id-new-page">
+    <legend>What do you want to add?</legend>
+    <div>
+        
         <form action="/items/new_item"><button class="new-item-button">New Item</button></form><form class="new-supplier" action="/suppliers/new_supplier"><button class="new-supplier-button">New Supplier</button></form>
     </div>
+</fieldset>
+    
 
 {% endblock %}
 

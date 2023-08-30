@@ -31,7 +31,8 @@ def add_supplier():
 @suppliers_blueprint.route("/suppliers/<id>")
 def show_supplier(id):
     supplier = supplier_repository.select(id)
-    return render_template('suppliers/show.html', supplier = supplier)
+    items = item_repository.items_by_supplier(supplier)
+    return render_template('suppliers/show.html', supplier = supplier, items = items)
 
 @suppliers_blueprint.route("/suppliers/<id>/edit")
 def edit_supplier(id):
@@ -51,6 +52,3 @@ def update_supplier(id):
 def delete(id):
     supplier_repository.delete(id)
     return redirect('/suppliers')
-
-# @suppliers_blueprint.route("/suppliers/<id>")
-# def item_by_supplier(id):
