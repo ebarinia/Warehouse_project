@@ -17,4 +17,3 @@ CREATE TABLE items (
   selling_price FLOAT,
   supplier_id INT NOT NULL REFERENCES suppliers(id)
 );
-
