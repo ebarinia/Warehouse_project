@@ -24,3 +24,7 @@ eBay, Amazon (back end only), Magento
 - Filter the inventory list by name. For example, being to display all the item starting with the same name
 
 - Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
+
+```
+This is a test for the code
+```
