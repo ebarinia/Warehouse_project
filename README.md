@@ -42,6 +42,28 @@ psql
 - If not installed, find the installation guide [here](https://www.psycopg.org/docs/install.html)
 - Create database
 ```
+#terminal
 createdb warehouse_inventory
 ```
+- initializing the tables for the database
+```
+#terminal
+psql -d warehouse_inventory -f db/warehouse_inventory.sql
+```
 
+### 3. Initialize the database
+
+- populate the database with dummy data
+```
+#terminal (cd in the root folder)
+python3 console.py
+```
+
+### 4. Starting the app
+
+- make sure that nothing else is running on your localhost port 4999. If so, change the port on the .flaskenv file to a different one (like 5000)
+- start the app
+```
+#terminal
+flask run
+```
