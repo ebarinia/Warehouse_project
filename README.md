@@ -1,8 +1,8 @@
-## Brief
+### Brief
 
 The client has several warehouses across Scotland, and has asked me develop an app to help her manage her stock. Using Python, Flask and SQL, create a full-stack application that would keep track of the inventory, as well as a list of suppliers. For each product, the inventory manager should provide valuable information as well as where it was purchased from.
 
-## MVP
+### MVP
 
 - A user should be able to track individual products, including a name, description, stock quantity, additional expense, buying cost, sold status and selling price.
 
@@ -16,10 +16,32 @@ The client has several warehouses across Scotland, and has asked me develop an a
 
 - The inventory should display whether an item has sold out or has low stock, as well as showing stock quantity as a number.
 
-## ⭐ Extensions
+### ⭐ Extensions ⭐
  
 - Calculate the markup for an item, and display it on the item page next to the quantity
 
 - Filter the inventory list by name. For example, being to display all the item starting with the same name
 
 - Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
+
+## Setup & Installation
+
+#### 1. Git clone the repo on local machine
+
+```
+#terminal
+git clone git@github.com:ebarinia/Warehouse_project.git
+```
+
+#### 2. Create the database
+- Check wether PostgreSQL/PSYCOPG2 are installed on the machine
+```
+#terminal
+psql
+```
+- If not installed, find the installation guide [here](https://www.psycopg.org/docs/install.html)
+- Create database
+```
+createdb warehouse_inventory
+```
+
