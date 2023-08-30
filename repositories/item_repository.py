@@ -63,3 +63,15 @@ def items_by_supplier(supplier):
         item = Item(row['name'], row['description'], row['quantity'], row['buying_cost'], row['selling_price'], supplier, category, row['id'])
         items.append(item)
     return items
+
+def items_by_category(category):
+    items = []
+    sql = "SELECT * FROM items WHERE category_id = %s"
+    values = [category.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        supplier = supplier_repository.select(row['supplier_id'])
+        item = Item(row['name'], row['description'], row['quantity'], row['buying_cost'], row['selling_price'], supplier, category, row['id'])
+        items.append(item)
+    return items

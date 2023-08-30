@@ -12,11 +12,16 @@ items_blueprint = Blueprint("items", __name__)
 
 @items_blueprint.route("/items")
 def list_items():
-    items = item_repository.select_all()
-    categories = category_repository.select_all()
-
-    sorted_items = sorted(items, key=lambda items: items.name.lower())
-    return render_template("items/index.html", all_items = sorted_items, categories = categories)
+    # pdb.set_trace()
+    category_id = request.args.get('category')
+    if category_id:
+        category = category_repository.select(category_id)
+        items = item_repository.items_by_category(category)
+    else:
+        items = item_repository.select_all()
+    all_categories = category_repository.select_all()
+    
+    return render_template("items/index.html", items=items, all_categories=all_categories)
 
 @items_blueprint.route("/items/new_item")
 def new_item():
@@ -27,7 +32,6 @@ def new_item():
 
 @items_blueprint.route("/items", methods=['POST'])
 def add_item():
-    # pdb.set_trace()
     name          = request.form['name']
     description   = request.form['description']
     quantity      = int(request.form['quantity'])
