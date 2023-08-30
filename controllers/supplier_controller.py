@@ -11,7 +11,7 @@ suppliers_blueprint = Blueprint("suppliers", __name__)
 @suppliers_blueprint.route("/suppliers/")
 def list_suppliers():
     suppliers = supplier_repository.select_all()
-    sorted_suppliers = sorted(suppliers, key=lambda suppliers: suppliers.name)
+    sorted_suppliers = sorted(suppliers, key=lambda suppliers: (not suppliers.active, suppliers.name))
     return render_template("suppliers/index.html", all_suppliers = sorted_suppliers)
 
 @suppliers_blueprint.route("/suppliers/new_supplier")
@@ -23,7 +23,7 @@ def new_supplier():
 def add_supplier():
     name         = request.form['name']
     location     = request.form['location']
-    active       = request.form['active']
+    active       = True
     supplier     = Supplier(name, location, active)
     supplier_repository.save(supplier)
     return redirect('suppliers')

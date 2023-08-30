@@ -9,7 +9,6 @@
             <h3 class="item-name">{{item.name}}</h3>
             <p><b>Description: </b> {{item.description}}</p>
             <p><b>Supplier: </b> {{item.supplier.name}}</p>
-            <p><b>Markup: </b>{{ item.calculate_markup() }}%</p>
             <p><b>Quantity: </b> {% if item.quantity == 0 %}<span class="out-of-stock">Out of Stock</span>{%elif item.quantity < 5 %}{{ item.quantity }}<span class="low-stock">(Stock Low)</span>{% else %}{{ item.quantity }} {% endif %}</p>
         </div>
 
@@ -21,5 +20,6 @@
     </div>
 </div>
 {% endfor %}
+<br>
 
 {% endblock %}

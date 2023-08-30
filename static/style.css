@@ -11,9 +11,11 @@
 body {
   height: 100vh;
   background-color: #508086;
-  /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/47/Annapurna_Ranges_%28Unsplash%29.jpg); */
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/47/Annapurna_Ranges_%28Unsplash%29.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; 
+  background-blend-mode: luminosity;
 }
 
 li {
@@ -26,30 +28,24 @@ a {
 
 a:hover{
   color: orange;
+  font-weight: bold;
 }
 /* HEADER */
 
-.logo {
-  margin-left: -52px;
-  float: left;
-}
-
 .navbar {
-  /* width: 100; */
+  margin-top: 50px;
   position: relative;
-  background-color: #336471;
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
+  justify-content: center;
 }
 
 
 .navbar .links {
   float: right;
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   padding: 0.5rem 1rem;
 }
 
@@ -57,8 +53,8 @@ a:hover{
   float: auto;
   text-decoration: none;
   color: #fff;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 200;
 }
 
 .item-list {
@@ -121,13 +117,8 @@ select {
   text-align: center;
 }
 
-.welcome {
+#welcome {
   text-align: center;
-}
-
-.home-h1 {
-  font-size: 4rem;
-  font-weight: bold;
 }
 
 button {
@@ -143,11 +134,11 @@ button {
     font-weight:300;
     color:#FFFFFF;
     text-align:center;
-    transition: all 0.2s;
+    transition: all 0.3s;
     margin-top: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adding a box shadow */
-
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+
 button:hover{
   color:#000000;
   background-color:#FFFFFF;
@@ -159,7 +150,7 @@ button:hover{
 }
 
 .item-name {
-  color: rgb(235, 132, 14);
+  color: orange;
 }
 
 #content {
