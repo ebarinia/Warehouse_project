@@ -1,30 +1,25 @@
-⭐ MVP ⭐
+## Brief
 
-- The Warehouse inventory should track individual products, including a name, description, stock quantity, additional expense, buying cost, sold status and selling price.
+The client has several warehouses across Scotland, and has asked me develop an app to help her manage her stock. Using Python, Flask and SQL, create a full-stack application that would keep track of the inventory, as well as a list of suppliers. For each product, the inventory manager should provide valuable information as well as where it was purchased from.
 
-- The inventory should track the dealer, including a name and any other appropriate details.
+## MVP
 
-- The inventory should be sorted in some ways, either by id, name, or quantity
+- A user should be able to track individual products, including a name, description, stock quantity, additional expense, buying cost, sold status and selling price.
 
-- The shop can sell anything you like, but you should be able to create and edit manufacturers and products separately.
-    This might mean that it makes more sense for a car shop to track makes and models of cars. Or a bookstore might sell books by author, or by publisher, and not by manufacturer. You are free to name classes and tables as appropriate to your project.
+- A user should be able to track the supplier, including its name, location and whether this supplier is still working with them.
 
-- Show an inventory page, listing all the details and quantity for all the products in stock in a single view.
+- A user you should be able to create and edit an item and a supplier separately.
 
-- As well as showing stock quantity as a number, the app display whether or not an item has been sold
+- The inventory and list of suppliers should be sorted in some ways, either by type, name, or quantity
 
-⭐Inspired by ⭐
+- The inventory should show an inventory page, listing all the details and quantity for all the products in stock in a single view.
 
-eBay, Amazon (back end only), Magento
+- The inventory should display whether an item has sold out or has low stock, as well as showing stock quantity as a number.
 
-⭐ Possible Extensions ⭐
+## ⭐ Extensions
  
-- Calculate the gross profit for a sold item, and display it on the item page next to the sold status
+- Calculate the markup for an item, and display it on the item page next to the quantity
 
 - Filter the inventory list by name. For example, being to display all the item starting with the same name
 
 - Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
-
-```
-This is a test for the code
-```
