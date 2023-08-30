@@ -13,8 +13,10 @@ items_blueprint = Blueprint("items", __name__)
 @items_blueprint.route("/items")
 def list_items():
     items = item_repository.select_all()
+    categories = category_repository.select_all()
+
     sorted_items = sorted(items, key=lambda items: items.name.lower())
-    return render_template("items/index.html", all_items = sorted_items)
+    return render_template("items/index.html", all_items = sorted_items, categories = categories)
 
 @items_blueprint.route("/items/new_item")
 def new_item():

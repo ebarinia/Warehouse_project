@@ -4,6 +4,8 @@ from models.category import Category
 from models.item import Item
 from models.supplier import Supplier
 
+import repositories.supplier_repository as supplier_repository
+
 def save(category):
     sql = "INSERT INTO categories (name) VALUES (%s) RETURNING id"
     values = [category.name]
@@ -35,15 +37,3 @@ def select(id):
 def delete_all():
     sql = "DELETE  FROM categories"
     run_sql(sql)
-
-def items_by_category(category):
-    items = []
-    sql = "SELECT * FROM items WHERE category_id = %s"
-    values = [category.id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        supplier = supplier_repository.select(row['supplier_id'])
-        item = Item(row['name'], row['description'], row['quantity'], row['buying_cost'], row['selling_price'], supplier, category, row['id'])
-        items.append(item)
-    return items

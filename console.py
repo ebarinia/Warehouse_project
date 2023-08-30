@@ -27,6 +27,8 @@ category_3 = Category('Homeware')
 category_repository.save(category_3)
 category_4 = Category('Clothing')
 category_repository.save(category_4)
+category_5 = Category('Furniture')
+category_repository.save(category_5)
 
 item_1 = Item('screwdriver', 'just a screwdriver', 10, 5.00, 10.00, supplier_1, category_2)
 item_repository.save(item_1)
