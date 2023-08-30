@@ -29,6 +29,15 @@
     </div>
 
     <div>
+        <label for="category">Category</label><br>
+        <select name="category" id="">
+           {% for category in categories %}
+            <option value={{category.id}}>{{category.name}}</option>
+           {% endfor %}
+        </select>
+   </div>
+
+    <div>
          <label for="supplier">Supplier: </label>
          <select name="supplier">
             {% for supplier in suppliers %}

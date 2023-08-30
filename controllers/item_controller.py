@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
-import pdb
 
 from models.item import Item
 
 import repositories.item_repository as item_repository
 import repositories.supplier_repository as supplier_repository
+import repositories.category_repository as category_repository
+
 
 items_blueprint = Blueprint("items", __name__)
 
@@ -19,7 +20,8 @@ def list_items():
 def new_item():
     item = item_repository.select_all()
     suppliers = supplier_repository.select_all()
-    return render_template('new/new_item.html', item = item, suppliers = suppliers)
+    categories = category_repository.select_all()
+    return render_template('new/new_item.html', item = item, suppliers = suppliers, categories = categories)
 
 @items_blueprint.route("/items", methods=['POST'])
 def add_item():
@@ -30,8 +32,10 @@ def add_item():
     buying_cost   = float(request.form['buying_cost'])
     selling_price = float(request.form['selling_price'])
     supplier_id   = request.form['supplier']
+    category_id   = request.form['category']
     supplier      = supplier_repository.select(supplier_id)
-    item          = Item(name, description, quantity, buying_cost, selling_price, supplier)
+    category      = category_repository.select(category_id)
+    item          = Item(name, description, quantity, buying_cost, selling_price, supplier, category)
     item_repository.save(item)
     return redirect('items')
 
@@ -44,7 +48,8 @@ def show_item(id):
 def edit_item(id):
     item = item_repository.select(id)
     suppliers = supplier_repository.select_all()
-    return render_template('items/edit.html', item = item, suppliers = suppliers)
+    categories = category_repository.select_all()
+    return render_template('items/edit.html', item = item, suppliers = suppliers, categories = categories)
 
 @items_blueprint.route("/items/<id>", methods=['POST'])
 def update_item(id):
@@ -55,8 +60,10 @@ def update_item(id):
     buying_cost   = float(request.form['buying_cost'])
     selling_price = float(request.form['selling_price'])
     supplier_id   = request.form['supplier']
+    category_id   = request.form['category']
     supplier      = supplier_repository.select(supplier_id)
-    item          = Item(name, description, quantity, buying_cost, selling_price, supplier, id)
+    category      = category_repository.select(category_id)
+    item          = Item(name, description, quantity, buying_cost, selling_price, supplier, category, id)
     item_repository.update(item)
     return redirect('/items')
 

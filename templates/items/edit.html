@@ -39,6 +39,15 @@
                     {% endfor %}
                  </select>
             </div>
+
+            <div>
+                <label for="category">Category</label><br>
+                <select name="category" id="">
+                   {% for category in categories %}
+                   <option value={{category.id}}>{{category.name}}</option>
+                   {% endfor %}
+                </select>
+           </div>
           
             <button type="submit">Update Item</button>
         

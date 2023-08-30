@@ -5,6 +5,7 @@
     <h3 class="item-name">{{item.name}}</h3>
     <p><b>Description: </b> {{item.description}}</p>
     <p><b>Supplier: </b><a href="/suppliers/{{item.supplier.id}}">{{item.supplier.name}}</a></p>
+    <p><b>Category: </b> {{item.category.name}}</p>
     <p><b>Buying Cost: </b> {{item.buying_cost}}</p>
     <p><b>Selling Price: </b> {{item.selling_price}}</p>
     <p><b>Markup: </b>{{ item.calculate_markup() }}%</p>
