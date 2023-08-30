@@ -51,7 +51,7 @@ createdb warehouse_inventory
 psql -d warehouse_inventory -f db/warehouse_inventory.sql
 ```
 
-### 3. Initialize the database
+#### 3. Initialize the database
 
 - populate the database with dummy data
 ```
@@ -59,7 +59,7 @@ psql -d warehouse_inventory -f db/warehouse_inventory.sql
 python3 console.py
 ```
 
-### 4. Starting the app
+#### 4. Starting the app
 
 - make sure that nothing else is running on your localhost port 4999. If so, change the port on the .flaskenv file to a different one (like 5000)
 - start the app
