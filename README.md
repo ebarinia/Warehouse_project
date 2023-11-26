@@ -1,3 +1,6 @@
+
+![item-explorer](https://github.com/ebarinia/Warehouse_project/assets/46579070/e7f8da02-13b8-4f6e-9263-b09e4fb59ab6)[Youtube Demo](https://youtu.be/vSLNiOuU1V8)
+
 ### Brief
 
 The client has several warehouses across Scotland, and has asked me develop an app to help her manage her stock. Using Python, Flask and SQL, create a full-stack application that would keep track of the inventory, as well as a list of suppliers. For each product, the inventory manager should provide valuable information as well as where it was purchased from.
